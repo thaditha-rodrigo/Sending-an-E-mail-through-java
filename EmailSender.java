@@ -29,7 +29,7 @@ public class EmailSender
         {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-               return new PasswordAuthentication ("timeticker86@gmail.com","hdvgwkkanonutxix") ;//users gmail and passowrd of the users 
+               return new PasswordAuthentication ("","") ;//users gmail and passowrd of the users(Nedd to give an app password) 
             }
             
         }
@@ -40,11 +40,11 @@ public class EmailSender
          System.out.println("Preparing to send mail.");
          init();
          Message message = new MimeMessage(session);
-         message.setFrom(new InternetAddress("timeticker86@gmail.com"));//users email address
+         message.setFrom(new InternetAddress(""));//users email address
          message.setRecipients(Message.RecipientType.TO,
              InternetAddress.parse(result));
-         message.setSubject("Item Out of Stcok Notice");
-         message.setText("Item is out of stock.\nPlease contact Mrs.Sudharma - 077693454");
+         message.setSubject("");//E-mail subject you want to send
+         message.setText("");//E-mail content you want to send
          Transport.send(message);
          System.out.println("Message sent successfully.");
     }
